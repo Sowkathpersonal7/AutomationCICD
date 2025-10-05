@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests"  name="Suite">
+<listeners>
+<listener class-name="Sowkath.TestComponents.Listeners"></listener>
+</listeners>
+  <test thread-count="5" name="SubmitOrder">
+    <classes>
+      <class name="Sowkath.SeleniumFrameworkDesign.StandAloneTestcase"/>
+    </classes>
+  </test> <!-- Test -->
+    <test thread-count="5" name="ErrorHandling">
+    <classes>
+      <class name="Sowkath.SeleniumFrameworkDesign.ErrorHandling"/>
+    </classes>
+  </test> 
+</suite> <!-- Suite -->
