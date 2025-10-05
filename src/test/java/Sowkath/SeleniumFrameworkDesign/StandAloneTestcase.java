@@ -23,28 +23,28 @@ public class StandAloneTestcase extends BaseTest{
 		String gmail  = "sowkath_m@gmail.com";
 		String Pswd = "Test@123";
 		String purchase = "ZARA COAT 3";
-		
 
-		
+
+
 		LaunchApplication();
 		login.username(gmail);
 		login.password(Pswd);
 		AddingProducts product = login.login();
-		
 
+    //adding to check whether jenkin is taking it for trigger
 		List<WebElement> products = product.getProductList();
 		WebElement prod = product.getProductByName(purchase);
 		cartSelection cart = product.addProductToCart(purchase);
-		
+
 
 	   cart.cartclick();
-	   
+
 
 	   cart.getCartProduct();
 	   boolean finalCart = cart.cartProductCheck(purchase);
 	   AssertJUnit.assertEquals(finalCart, true);
 	   PaymentOrderPage pay = cart.productCheckout();
-	   
+
 
 	  pay.sendCountry();
 	  pay.getCountry();
@@ -55,9 +55,8 @@ public class StandAloneTestcase extends BaseTest{
 	  WebElement ordersuccessful = pay.checkOrderStatus();
      System.out.println(ordersuccessful.getText());
 
- 
-	  
+
+
 	}
 
 }
- 
